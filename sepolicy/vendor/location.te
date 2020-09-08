@@ -1,1 +1,2 @@
-get_prop(location, vendor_lge_misc_prop)
+allow location hal_cacert_hwservice:hwservice_manager find;
+allow location qtidataservices_app:binder { call transfer };

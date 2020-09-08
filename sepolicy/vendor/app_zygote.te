@@ -1,0 +1,3 @@
+allow app_zygote app_data_file:dir getattr;
+allow app_zygote same_process_hal_file:file { execute read };
+allow app_zygote zygote_exec:file { execute read };

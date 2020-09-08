@@ -1,1 +1,2 @@
-allow qtidataservices_app qtidataservices_app:socket create_socket_perms_no_ioctl;
+allow qtidataservices_app self:socket { create ioctl read write };
+allow qtidataservices_app location:binder call;

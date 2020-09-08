@@ -1,0 +1,4 @@
+binder_call(system_server, glgps)
+allow system_server init:binder call;
+allow system_server init:binder transfer;
+allow system_server blkio:dir search;

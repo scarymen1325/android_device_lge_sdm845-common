@@ -1,7 +1,5 @@
-allow tee persistlg_goodix_file:dir rw_dir_perms;
-allow tee persistlg_goodix_file:file { rw_file_perms create unlink };
-
-allow tee persistlg_data_file:dir rw_dir_perms;
-allow tee persistlg_data_file:file { rw_file_perms create };
-
-allow tee persistlg_file:dir r_dir_perms;
+allow tee fingerprintd_data_file:dir { search create_dir_perms add_name open read remove_name write };
+allow tee fingerprintd_data_file:file { create_file_perms create open read unlink write };
+allow tee unlabeled:dir { add_name open read remove_name write };
+allow tee unlabeled:file { create open read unlink write };
+allow tee unlabeled:dir search;

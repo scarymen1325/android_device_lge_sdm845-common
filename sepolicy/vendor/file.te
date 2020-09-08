@@ -1,30 +1,32 @@
-# OP
-type op_file, file_type;
-type op_audio_file, file_type;
-
-# LG
+# rootfs
+type ftm_file, file_type;
+type misc_file, file_type;
 type persdata_file, file_type;
+type vzw_file, file_type;
+type carrier_file, file_type;
+type eri_file, file_type;
 
-# Persist
-type persistlg_file, file_type;
-type persistlg_camera_file, file_type;
-type persistlg_data_file, file_type;
-type persistlg_drm_file, file_type;
-type persistlg_firmware_file, file_type;
-type persistlg_goodix_file, file_type;
-type persistlg_wlan_file, file_type;
+type audio_socket, file_type;
 
-# Power
-type qni_power_file, file_type;
 
-# Proc
-type proc_devices, proc_type, fs_type;
+type fingerprint_data_file, data_file_type, file_type;
+type gps_data_file, data_file_type, file_type;
+type gps_socket, file_type;
+type thermal_data_file, data_file_type, file_type;
 
-# SNS
-type sns_file, file_type;
+type debugfs_sched_features, debugfs_type, fs_type;
+type debugfs_rpm, debugfs_type, fs_type;
+type proc_tp, proc_type, fs_type;
+type proc_sysctl_schedboost, proc_type, fs_type;
 
-# Sysfs
-type sysfs_veneer, sysfs_type, fs_type;
-type sysfs_qnovo, sysfs_type, fs_type;
-type sysfs_boot_cdsp, sysfs_type, fs_type;
-type sysfs_lge_touch, sysfs_type, fs_type;
+type sysfs_fod, sysfs_type, fs_type;
+type sysfs_gps, sysfs_type, fs_type;
+type sysfs_msm_subsys, sysfs_type, fs_type;
+type sysfs_rpm, sysfs_type, fs_type;
+type sysfs_system_sleep_stats, sysfs_type, fs_type;
+type sysfs_wireless_supply, sysfs_type, fs_type;
+
+type persist_audio_file, file_type, vendor_persist_type;
+type persist_camera_file, file_type, vendor_persist_type;
+
+type blkio, file_type;

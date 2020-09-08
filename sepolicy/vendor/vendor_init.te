@@ -1,15 +1,21 @@
-allow vendor_init tmpfs:dir create_dir_perms;
+# Allow vendor_init to write to sysfs_ssr_toggle
+allow vendor_init sysfs_ssr_toggle:file w_file_perms;
 
-set_prop(vendor_init, audio_prop)
-set_prop(vendor_init, vendor_audio_prop)
-set_prop(vendor_init, camera_prop)
-set_prop(vendor_init, persist_dpm_prop)
-set_prop(vendor_init, vendor_lge_misc_prop)
-set_prop(vendor_init, vendor_qni_prop)
-set_prop(vendor_init, vendor_sensors_prop)
-set_prop(vendor_init, vendor_ssr_prop)
-set_prop(vendor_init, media_settings_prop)
+# Allow vendor_init to write to /dev/blkio
+allow vendor_init blkio:file w_file_perms;
 
-allow vendor_init persdata_block_device:dir relabelto;
-
-allow vendor_init sec_block_device:blk_file r_file_perms;
+# Allow vendor_init to enable/disable sched_boost
+allow vendor_init proc_sysctl_schedboost:file rw_file_perms;
+allow vendor_init camera_prop:property_service set;
+allow vendor_init default_prop:property_service set;
+allow vendor_init persist_dpm_prop:property_service set;
+allow vendor_init vendor_ssr_prop:property_service set;
+allow vendor_init block_device:blk_file { open read };
+allow vendor_init debugfs:file write;
+allow vendor_init default_prop:file read;
+allow vendor_init exported2_default_prop:property_service set;
+allow vendor_init exported_secure_prop:property_service set;
+allow vendor_init freq_prop:property_service set;
+allow vendor_init persist_debug_prop:file read;
+allow vendor_init system_data_file:dir { setattr write open read };
+allow vendor_init tombstone_data_file:dir setattr;
